@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Ownglyph_ParkDaHyun";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_ParkDaHyun.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --black: #222222;
+  --white: #ffffff;
+  --bg: #f0eeea;
+  --primary: #e8e0d3;
+  --secondary: #d8cec0;
+
+  --gray-dark: #707070;
+  --gray-light: #919191;
+
+  --blue: #5979d1;
+  --red: #d86c6c;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Ownglyph_ParkDaHyun", sans-serif;
+  font-size: 1.6rem;
+  color: var(--black);
+  line-height: 1.5;
+}
+
+#root {
+  background-color: var(--bg);
+  max-width: 600px;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
