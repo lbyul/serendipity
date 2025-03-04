@@ -6,9 +6,12 @@ import Diary from "./pages/Diary";
 import Edit from "./pages/Edit";
 import Notfound from "./pages/Notfound";
 
+import { getEmotionImage } from "./util/get-emotion-image";
+
 function App() {
   return (
     <>
+      <img src={getEmotionImage(1)} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/new" element={<New />} />
