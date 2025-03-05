@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import New from "./pages/New";
@@ -7,6 +8,11 @@ import Edit from "./pages/Edit";
 import Notfound from "./pages/Notfound";
 
 function App() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
   return (
     <>
       <Routes>

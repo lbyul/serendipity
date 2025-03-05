@@ -15,7 +15,10 @@ const renderArrow = (direction) => {
 
 const Button = ({ text, type, onClick, arrow, arrowDirection, imageUrl }) => {
   return (
-    <button className={`button button-${type}`} onClick={onClick}>
+    <button
+      className={`button ${type ? `button-${type}` : ""}`}
+      onClick={onClick}
+    >
       {text && <span className="button-text">{text}</span>}
       {arrow && renderArrow(arrowDirection)}
       {imageUrl && (
