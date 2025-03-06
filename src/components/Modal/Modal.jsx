@@ -5,7 +5,6 @@ const Modal = ({
   isOpen,
   onClose,
   message,
-  cancelText,
   confirmText,
   confirmType,
   onConfirm,
@@ -60,7 +59,7 @@ const Modal = ({
         </p>
         <div className="modal-buttons">
           <button className="modal-button modal-btn-cancel" onClick={onClose}>
-            {cancelText}
+            취소
           </button>
           <button
             className={`modal-button ${
