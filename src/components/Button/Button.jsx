@@ -3,11 +3,13 @@ import "./Button.css";
 const renderArrow = (direction) => {
   switch (direction) {
     case "left":
-      return <span className="button-arrow-left">{"<"}</span>;
+      return <span className="button-arrow button-arrow-left">{"<"}</span>;
     case "right":
-      return <span className="button-arrow-right">{">"}</span>;
+      return <span className="button-arrow button-arrow-right">{">"}</span>;
     case "down":
-      return <span className="button-arrow-down">{">"}</span>;
+      return <span className="button-arrow button-arrow-down">{">"}</span>;
+    case "top":
+      return <span className="button-arrow button-arrow-top">{"<"}</span>;
     default:
       return null;
   }

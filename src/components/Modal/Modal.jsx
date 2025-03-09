@@ -1,5 +1,6 @@
-import { useEffect, useRef } from "react";
 import "./Modal.css";
+import { useEffect, useRef } from "react";
+import useEscapeKey from "../../hooks/useEscapeKey";
 
 const Modal = ({
   isOpen,
@@ -10,20 +11,7 @@ const Modal = ({
   onConfirm,
 }) => {
   const overlayRef = useRef(null);
-
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape" && isOpen) {
-        onClose();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [isOpen, onClose]);
+  useEscapeKey(isOpen, onClose);
 
   const handleOverlayClick = (e) => {
     if (overlayRef.current === e.target) {

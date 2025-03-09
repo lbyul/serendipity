@@ -16,7 +16,8 @@
   color: var(--gray-light);
 }
 
-.button-arrow-down {
+.button-arrow-down,
+.button-arrow-top {
   display: inline-block;
   transform: rotate(90deg);
 }
