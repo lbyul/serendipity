@@ -1,0 +1,36 @@
+.diaryitem {
+  display: flex;
+  gap: 25px;
+  padding: 20px 0;
+  border-bottom: 1px dashed var(--primary);
+}
+
+.diaryitem .diaryitem-img {
+  display: flex;
+  cursor: pointer;
+  width: 64px;
+  height: 100%;
+}
+
+.diaryitem .diaryitem-img img {
+  width: 100%;
+  object-fit: contain;
+  align-self: start;
+}
+
+.diaryitem .diaryitem-info {
+  flex: 1;
+  cursor: pointer;
+}
+
+.diaryitem .diaryitem-info .diaryitem-created-date {
+  color: var(--gray-light);
+}
+
+.diaryitem .diaryitem-info .diaryitem-content {
+  word-break: keep-all;
+}
+
+.diaryitem .diaryitem-button {
+  align-self: center;
+}

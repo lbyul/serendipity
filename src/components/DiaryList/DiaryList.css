@@ -1,0 +1,28 @@
+.diarylist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 100px);
+}
+
+.diarylist .diarylist-wrapper {
+  width: 100%;
+  flex: 1;
+  max-height: calc(100vh - 180px);
+  margin-bottom: 20px;
+
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+}
+
+.diarylist .diarylist-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.diarylist .diarylist-button {
+  margin-bottom: 40px;
+}

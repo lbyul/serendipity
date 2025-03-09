@@ -18,7 +18,7 @@ const Home = () => {
   };
 
   return (
-    <section>
+    <section className="home">
       <Header
         title={"2025. 03"}
         leftChild={
