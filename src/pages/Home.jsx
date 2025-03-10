@@ -32,17 +32,8 @@ const getMonthlyData = (pivotDate, data) => {
 
 const Home = () => {
   const data = useContext(DiaryStateContext);
-  const [sortType, setSortType] = useState("latest");
   const [pivotDate, setPivoDate] = useState(new Date());
-
-  const sortOptions = [
-    { value: "latest", label: "최신 순" },
-    { value: "oldest", label: "오래된 순" },
-  ];
-
-  const handleSortChange = (option) => {
-    setSortType(option.value);
-  };
+  const [sortType, setSortType] = useState("latest");
 
   const onIncreaseMonth = () => {
     setPivoDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth() + 1));
@@ -53,6 +44,23 @@ const Home = () => {
   };
 
   const monthlyData = getMonthlyData(pivotDate, data);
+
+  const sortOptions = [
+    { value: "latest", label: "최신 순" },
+    { value: "oldest", label: "오래된 순" },
+  ];
+
+  const onChangeSortType = (option) => {
+    setSortType(option.value);
+  };
+
+  const sortedMonthlyData = monthlyData.toSorted((a, b) => {
+    if (sortType === "oldest") {
+      return Number(a.createdDate) - Number(b.createdDate);
+    } else {
+      return Number(b.createdDate) - Number(a.createdDate);
+    }
+  });
 
   return (
     <section className="home">
@@ -77,7 +85,7 @@ const Home = () => {
         leftChild={
           <Dropdown
             options={sortOptions}
-            onChange={handleSortChange}
+            onChange={onChangeSortType}
             arrow={true}
             buttonType="select"
             align="left"
@@ -85,7 +93,7 @@ const Home = () => {
         }
         rightChild={<Button imageUrl={CalendarIcon} />}
       />
-      <DiaryList data={monthlyData} />
+      <DiaryList data={sortedMonthlyData} />
     </section>
   );
 };
