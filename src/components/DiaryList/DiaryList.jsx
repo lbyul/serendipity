@@ -3,11 +3,13 @@ import DiaryItem from "../DiaryItem/DiaryItem";
 import Button from "../Button/Button";
 import Clover from "../../assets/clover.png";
 
-const DiaryList = () => {
+const DiaryList = ({ data }) => {
   return (
     <div className="diarylist">
       <div className="diarylist-wrapper">
-        <DiaryItem />
+        {data.map((item) => (
+          <DiaryItem key={item.id} {...item} />
+        ))}
       </div>
 
       <div className="diarylist-button">
