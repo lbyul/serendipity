@@ -1,10 +1,9 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { DiaryDispatchContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header/Header";
 import Button from "../components/Button/Button";
 import Editor from "../components/Editor/Editor";
-import EmotionSelector from "../components/Emotion/EmotionSelector";
 
 const New = () => {
   const { onCreate } = useContext(DiaryDispatchContext);

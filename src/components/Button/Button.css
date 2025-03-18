@@ -41,6 +41,11 @@
   height: 32px;
 }
 
+.button-small img {
+  width: 18px;
+  height: 18px;
+}
+
 .button-circle-big {
   padding: 21px;
 }

@@ -28,9 +28,6 @@ const mockData = [
   },
 ];
 
-export const DiaryStateContext = createContext();
-export const DiaryDispatchContext = createContext();
-
 function reducer(state, action) {
   switch (action.type) {
     case "CREATE":
@@ -45,6 +42,9 @@ function reducer(state, action) {
       return state;
   }
 }
+
+export const DiaryStateContext = createContext();
+export const DiaryDispatchContext = createContext();
 
 function App() {
   const [data, dispatch] = useReducer(reducer, mockData);

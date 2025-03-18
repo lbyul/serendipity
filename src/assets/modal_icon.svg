@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 25.79">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #222;
+        font-family: 'Ownglyph_PDH-Rg', 'Ownglyph PDH';
+        font-size: 30px;
+      }
+
+      .cls-1, .cls-2 {
+        isolation: isolate;
+      }
+    </style>
+  </defs>
+  <g id="_그룹_5" data-name="그룹 5">
+    <g id="_." data-name=" ." class="cls-2">
+      <text class="cls-1" transform="translate(0 5.79)"><tspan x="0" y="0">.</tspan></text>
+    </g>
+    <g id="_.-2" data-name=" .-2" class="cls-2">
+      <text class="cls-1" transform="translate(0 15.79)"><tspan x="0" y="0">.</tspan></text>
+    </g>
+    <g id="_.-3" data-name=" .-3" class="cls-2">
+      <text class="cls-1" transform="translate(0 25.79)"><tspan x="0" y="0">.</tspan></text>
+    </g>
+  </g>
+</svg>

@@ -18,7 +18,7 @@
   overflow: hidden;
 }
 .modal-container p {
-  padding: 20px 40px;
+  padding: 20px 50px;
 }
 
 /* modal button */
@@ -29,7 +29,7 @@
 
 .modal-buttons .modal-button {
   flex: 1;
-  padding: 10px 0;
+  padding: 13px 0;
   transition: all 0.3s ease;
   font-size: 1.6rem;
 }
