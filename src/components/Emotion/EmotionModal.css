@@ -1,0 +1,50 @@
+.emotion-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.2);
+}
+
+.emotion-modal {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--primary);
+  border-radius: 30px 30px 0 0;
+  text-align: center;
+}
+
+.emotion-modal-close-btn {
+  background-color: var(--secondary);
+  width: 68px;
+  height: 6px;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+
+.emotion-modal-content {
+  margin: 28px 0 33px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.emotion-modal-content .date {
+  color: var(--gray-light);
+  font-size: 1.5rem;
+}
+
+.emotion-modal-content .text {
+  font-size: 1.6rem;
+}
+
+.emotion {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin: 32px 45px;
+  height: 100%;
+}

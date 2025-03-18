@@ -1,0 +1,91 @@
+.emotion-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  height: 155px;
+}
+
+.emotion-item-container {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 9px;
+}
+
+.emotion-item img {
+  width: 78px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.emotion-item img.emotion2 {
+  width: 75px;
+}
+
+.emotion-item img.emotion3 {
+  width: 81px;
+}
+
+.emotion-item img.emotion4 {
+  width: 82px;
+}
+
+.emotion-item img.emotion5 {
+  width: 68px;
+}
+
+.emotion-item img.emotion7 {
+  width: 90px;
+}
+
+.emotion-item img.emotion8,
+.emotion-item img.emotion9 {
+  width: 74px;
+}
+
+.emotion-item img:hover {
+  transform: scale(1.1);
+}
+
+.emotion-item img.selected {
+  transform: scale(1.1);
+}
+
+.emotion1-name {
+  color: #8bc887;
+}
+
+.emotion2-name {
+  color: #f0d174;
+}
+
+.emotion3-name {
+  color: #f8beb8;
+}
+
+.emotion4-name {
+  color: #aad6be;
+}
+
+.emotion5-name {
+  color: #96b8d2;
+}
+
+.emotion6-name {
+  color: #e66266;
+}
+
+.emotion7-name {
+  color: #a9a9a9;
+}
+
+.emotion8-name {
+  color: #b8b1c8;
+}
+
+.emotion9-name {
+  color: #666666;
+}

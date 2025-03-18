@@ -3,13 +3,13 @@
   flex-direction: column;
   align-items: center;
   height: calc(100vh - 100px);
+  margin-top: 10px;
 }
 
 .diarylist .diarylist-wrapper {
   width: 100%;
   flex: 1;
   max-height: calc(100vh - 180px);
-  margin-bottom: 20px;
 
   overflow-y: auto;
   scrollbar-width: none;
@@ -24,5 +24,5 @@
 }
 
 .diarylist .diarylist-button {
-  margin-bottom: 40px;
+  margin: 20px 0 40px 0;
 }

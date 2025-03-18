@@ -29,6 +29,7 @@
 
 /* button type - circle */
 .button-circle,
+.button-circle-big,
 .button-circle-small {
   background-color: var(--primary);
   border-radius: 50%;
@@ -38,6 +39,15 @@
 .button-img {
   width: 32px;
   height: 32px;
+}
+
+.button-circle-big {
+  padding: 21px;
+}
+
+.button-circle-big .button-img {
+  width: 40px;
+  height: 40px;
 }
 
 .button-circle-small {
