@@ -6,23 +6,30 @@ import Dropdown from "../components/Dropdown/Dropdown";
 import Header from "../components/Header/Header";
 import modalIcon from "../assets/modal_icon.svg";
 import Modal from "../components/Modal/Modal";
+import useDiary from "../hooks/useDiary";
+import DiaryEntry from "../components/DiaryEntry/DiaryEntry";
 
 const Diary = () => {
   const params = useParams();
   const [modalOpen, setModalOpen] = useState(false);
   const { onDelete } = useContext(DiaryDispatchContext);
   const nav = useNavigate();
+  const curDiaryItem = useDiary(params.id);
+
+  if (!curDiaryItem) {
+    return <div>데이터 로딩중..!</div>;
+  }
+
+  const { emotionId, createdDate, content } = curDiaryItem;
 
   const dropdownOptions = [
-    { value: "edit", label: "수정하기" },
-    { value: "delete", label: "삭제하기" },
+    {
+      value: "edit",
+      label: "수정하기",
+      onClick: () => nav(`/edit/${params.id}`),
+    },
+    { value: "delete", label: "삭제하기", onClick: () => setModalOpen(true) },
   ];
-
-  const onChangeDropdown = (option) => {
-    if (option.value === "delete") {
-      setModalOpen(true);
-    }
-  };
 
   const onClickDelet = () => {
     onDelete(params.id);
@@ -39,9 +46,15 @@ const Diary = () => {
             buttonType="small"
             icon={modalIcon}
             align="right"
-            onChange={onChangeDropdown}
           />
         }
+      />
+
+      <DiaryEntry
+        emotionId={emotionId}
+        createdDate={createdDate}
+        content={content}
+        isEditing={false}
       />
 
       <Modal

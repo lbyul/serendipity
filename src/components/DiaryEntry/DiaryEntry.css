@@ -1,4 +1,4 @@
-.editor {
+.diary-entry {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,12 +6,12 @@
   height: calc(100vh - 120px);
 }
 
-.editor-date input {
+.diary-date input {
   background-color: transparent;
   font-size: 1.6rem;
 }
 
-.editor-content {
+.diary-content {
   width: 100%;
   height: 100%;
   padding: 0 20px;
@@ -20,22 +20,22 @@
   margin-top: 60px;
 }
 
-.editor-content textarea {
+.diary-content textarea {
   width: 100%;
   height: 100%;
   font-size: 1.6rem;
   flex: 1;
   background-color: transparent;
   overflow-y: auto;
-
   scrollbar-width: none;
   -ms-overflow-style: none;
+  line-height: 1.5;
 }
 
-.editor-content textarea::-webkit-scrollbar {
+.diary-content textarea::-webkit-scrollbar {
   display: none;
 }
 
-.editor-submit-btn {
+.diary-submit-btn {
   align-self: end;
 }

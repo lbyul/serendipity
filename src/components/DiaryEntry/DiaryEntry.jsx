@@ -3,9 +3,15 @@ import Button from "../Button/Button";
 import "./DiaryEntry.css";
 import { getStringedDate } from "../../util/get-stringed-date";
 import EmotionSelector from "../Emotion/EmotionSelector";
-import { getEmotionImage } from "../../util/get-emotion-image";
 
-const DiaryEntry = ({ initData, onSubmit, isEditing = true }) => {
+const DiaryEntry = ({
+  initData,
+  onSubmit,
+  isEditing = true,
+  emotionId,
+  createdDate,
+  content,
+}) => {
   const [input, setInput] = useState({
     createdDate: new Date(),
     emotionId: 1,
@@ -47,21 +53,24 @@ const DiaryEntry = ({ initData, onSubmit, isEditing = true }) => {
   };
 
   return (
-    <div className="editor">
-      <section className="editor-emotion">
+    <div className="diary-entry">
+      <section className="diary-emotion">
         {isEditing ? (
           <EmotionSelector
             selectedEmotion={input.emotionId}
             onSelectEmotion={onSelectEmotion}
+            isReadOnly={false}
           />
         ) : (
-          <div>
-            <img src={getEmotionImage(input.emotionId)} alt="" />
-          </div>
+          <EmotionSelector
+            selectedEmotion={emotionId}
+            onSelectEmotion={onSelectEmotion}
+            isReadOnly={true}
+          />
         )}
       </section>
 
-      <section className="editor-date">
+      <section className="diary-date">
         {isEditing ? (
           <input
             name="createdDate"
@@ -70,11 +79,11 @@ const DiaryEntry = ({ initData, onSubmit, isEditing = true }) => {
             type="date"
           />
         ) : (
-          <span>{input.createdDate.toLocaleDateString()}</span>
+          <span>{getStringedDate(new Date(createdDate))}</span>
         )}
       </section>
 
-      <section className="editor-content">
+      <section className="diary-content">
         {isEditing ? (
           <textarea
             name="content"
@@ -83,12 +92,12 @@ const DiaryEntry = ({ initData, onSubmit, isEditing = true }) => {
             placeholder="오늘 하루는 어땠나요?"
           />
         ) : (
-          <p>{input.content}</p>
+          <p>{content}</p>
         )}
       </section>
 
       {isEditing && onSubmit && (
-        <section className="editor-submit-btn">
+        <section className="diary-submit-btn">
           <Button text={"작성완료"} onClick={onClickSubmitButton} />
         </section>
       )}

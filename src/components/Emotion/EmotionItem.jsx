@@ -8,10 +8,12 @@ const EmotionItem = ({
   onClick,
   isSelected,
   showName = true,
+  isReadOnly = false,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const onMouseEnter = () => {
+    if (isReadOnly) return;
     setIsHovered(true);
   };
 
@@ -20,21 +22,23 @@ const EmotionItem = ({
   };
 
   const onClickEmotion = () => {
+    if (isReadOnly) return;
     onClick(emotionId);
   };
 
   return (
     <li className="emotion-item">
-      <button className="emotion-item-container">
+      <div className={`emotion-item-container ${isReadOnly ? "readonly" : ""}`}>
         <img
-          className={`emotion${emotionId} ${isSelected ? "selected" : ""}`}
+          className={`emotion${emotionId} ${isSelected ? "selected" : ""} ${
+            isReadOnly ? "readonly" : ""
+          }`}
           src={getEmotionImage(emotionId)}
-          alt={`${emotionName} 이모티콘`}
           onClick={onClickEmotion}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         />
-      </button>
+      </div>
       {showName && (isHovered || isSelected) && (
         <span className={`emotion${emotionId}-name`}>{emotionName}</span>
       )}

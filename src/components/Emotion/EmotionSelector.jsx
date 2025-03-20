@@ -5,10 +5,15 @@ import Button from "../Button/Button";
 import Clover from "../../assets/clover.png";
 import EmotionModal from "./EmotionModal";
 
-const EmotionSelector = ({ selectedEmotion, onSelectEmotion }) => {
+const EmotionSelector = ({
+  selectedEmotion,
+  onSelectEmotion,
+  isReadOnly = false,
+}) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
+    if (isReadOnly) return;
     setModalOpen(true);
   };
 
@@ -26,12 +31,18 @@ const EmotionSelector = ({ selectedEmotion, onSelectEmotion }) => {
               isSelected={true}
               onClick={() => openModal()}
               showName={false}
+              isReadOnly={isReadOnly}
             />
           </ul>
         </div>
       ) : (
         <div className="emotion-selector-empty">
-          <Button type={"circle-big"} imageUrl={Clover} onClick={openModal} />
+          <Button
+            type={"circle-big"}
+            imageUrl={Clover}
+            onClick={openModal}
+            disabled={isReadOnly}
+          />
         </div>
       )}
       <EmotionModal

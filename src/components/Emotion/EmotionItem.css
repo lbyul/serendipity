@@ -89,3 +89,11 @@
 .emotion9-name {
   color: #666666;
 }
+
+.emotion-item-container.readonly {
+  cursor: default;
+}
+
+.emotion-item img.readonly {
+  cursor: default;
+}
