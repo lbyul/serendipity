@@ -20,12 +20,6 @@ const mockData = [
     emotionId: 2,
     content: "2번 일기 내용",
   },
-  {
-    id: 3,
-    createdDate: new Date("2025-02-21").getTime(),
-    emotionId: 3,
-    content: "3번 일기 내용",
-  },
 ];
 
 function reducer(state, action) {

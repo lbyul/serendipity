@@ -2,8 +2,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { DiaryDispatchContext, DiaryStateContext } from "../App";
 import Button from "../components/Button/Button";
-import Editor from "../components/Editor/Editor";
 import Header from "../components/Header/Header";
+import DiaryEntry from "../components/DiaryEntry/DiaryEntry";
 
 const Edit = () => {
   const params = useParams();
@@ -23,7 +23,7 @@ const Edit = () => {
     }
 
     setCurDiaryItem(currentDiaryItem);
-  }, [params.id]);
+  }, [params.id, data]);
 
   const onSubmit = (input) => {
     onUpdate(
@@ -38,7 +38,7 @@ const Edit = () => {
   return (
     <div>
       <Header leftChild={<Button text={"<"} onClick={() => nav(-1)} />} />
-      <Editor initData={curDiaryItem} onSubmit={onSubmit} />
+      <DiaryEntry initData={curDiaryItem} onSubmit={onSubmit} />
     </div>
   );
 };

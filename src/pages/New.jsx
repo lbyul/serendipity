@@ -3,7 +3,7 @@ import { DiaryDispatchContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header/Header";
 import Button from "../components/Button/Button";
-import Editor from "../components/Editor/Editor";
+import DiaryEntry from "../components/DiaryEntry/DiaryEntry";
 
 const New = () => {
   const { onCreate } = useContext(DiaryDispatchContext);
@@ -17,8 +17,7 @@ const New = () => {
   return (
     <section>
       <Header leftChild={<Button text={"<"} onClick={() => nav(-1)} />} />
-
-      <Editor onSubmit={onSubmit} />
+      <DiaryEntry onSubmit={onSubmit} />
     </section>
   );
 };
