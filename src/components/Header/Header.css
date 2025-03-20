@@ -11,15 +11,9 @@
   justify-self: start;
 }
 
-.header-center,
-.title {
+.header-center {
   grid-column: 2;
   font-size: 2.6rem;
-  justify-self: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 45px;
   min-width: 100px;
 }
 

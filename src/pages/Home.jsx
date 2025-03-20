@@ -5,6 +5,8 @@ import DiaryList from "../components/DiaryList/DiaryList";
 import Dropdown from "../components/Dropdown/Dropdown";
 import { useState, useContext } from "react";
 import { DiaryStateContext } from "../App";
+import { useNavigate } from "react-router-dom";
+import MonthNavigator from "../components/MonthNavigator/MonthNavigator";
 
 const getMonthlyData = (pivotDate, data) => {
   const beginTime = new Date(
@@ -34,13 +36,10 @@ const Home = () => {
   const data = useContext(DiaryStateContext);
   const [pivotDate, setPivoDate] = useState(new Date());
   const [sortType, setSortType] = useState("latest");
+  const nav = useNavigate();
 
-  const onIncreaseMonth = () => {
-    setPivoDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth() + 1));
-  };
-
-  const onDecreaseMonth = () => {
-    setPivoDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth() - 1));
+  const changeDate = (newDate) => {
+    setPivoDate(newDate);
   };
 
   const monthlyData = getMonthlyData(pivotDate, data);
@@ -65,23 +64,7 @@ const Home = () => {
   return (
     <section className="home">
       <Header
-        title={`${pivotDate.getFullYear()}. ${String(
-          pivotDate.getMonth() + 1
-        ).padStart(2, "0")}`}
-        titleLeft={
-          <Button
-            arrow="true"
-            arrowDirection="left"
-            onClick={onDecreaseMonth}
-          />
-        }
-        titleRight={
-          <Button
-            arrow="true"
-            arrowDirection="right"
-            onClick={onIncreaseMonth}
-          />
-        }
+        title={<MonthNavigator date={pivotDate} onChangeDate={changeDate} />}
         leftChild={
           <Dropdown
             options={sortOptions}
@@ -91,7 +74,9 @@ const Home = () => {
             align="left"
           />
         }
-        rightChild={<Button imageUrl={CalendarIcon} />}
+        rightChild={
+          <Button imageUrl={CalendarIcon} onClick={() => nav("/calendar")} />
+        }
       />
       <DiaryList data={sortedMonthlyData} />
     </section>

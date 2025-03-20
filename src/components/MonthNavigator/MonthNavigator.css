@@ -1,0 +1,12 @@
+.month-navigator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+}
+.month-navigator h1 {
+  font-size: 2.6rem;
+  display: flex;
+  justify-content: center;
+  min-width: 100px;
+}
