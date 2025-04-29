@@ -4,8 +4,9 @@ import ListIcon from "../assets/list_icon.svg";
 import { useNavigate } from "react-router-dom";
 import MonthNavigator from "../components/MonthNavigator/MonthNavigator";
 import { useState } from "react";
+import Calendar from "../components/Calendar/Calendar";
 
-const Calendar = () => {
+const CalendarView = () => {
   const nav = useNavigate();
   const [currentDate, setCurrentDate] = useState(new Date());
 
@@ -19,8 +20,9 @@ const Calendar = () => {
         rightChild={<Button imageUrl={ListIcon} onClick={() => nav("/")} />}
       />
       <MonthNavigator date={currentDate} onChangeDate={changeDate} />
+      <Calendar />
     </div>
   );
 };
 
-export default Calendar;
+export default CalendarView;

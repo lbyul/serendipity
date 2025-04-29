@@ -1,0 +1,34 @@
+.calendar {
+  width: 100%;
+  padding: 20px;
+}
+
+.calendar-container {
+  width: 100%;
+}
+
+.calendar-weeks {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+.calendar-day-sun {
+  color: var(--red);
+}
+
+.calendar-day-sat {
+  color: var(--blue);
+}
+
+.calender-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  text-align: center;
+  margin-top: 40px;
+}
+
+.calender-date {
+  margin: 15px 0;
+}

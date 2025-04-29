@@ -2,7 +2,7 @@ import "./App.css";
 import { useReducer, useRef, createContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Calendar from "./pages/Calendar";
+import CalendarView from "./pages/CalendarView";
 import New from "./pages/New";
 import Diary from "./pages/Diary";
 import Edit from "./pages/Edit";
@@ -77,7 +77,7 @@ function App() {
         <DiaryDispatchContext.Provider value={{ onCreate, onUpdate, onDelete }}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/calendar" element={<CalendarView />} />
             <Route path="/new" element={<New />} />
             <Route path="/diary/:id" element={<Diary />} />
             <Route path="/edit/:id" element={<Edit />} />
