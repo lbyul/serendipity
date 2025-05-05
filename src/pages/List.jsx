@@ -4,7 +4,7 @@ import CalendarIcon from "./../assets/calendar_icon.svg";
 import DiaryList from "../components/DiaryList/DiaryList";
 import Dropdown from "../components/Dropdown/Dropdown";
 import { useState, useContext } from "react";
-import { DiaryStateContext } from "../App";
+import { DiaryStateContext, DateContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import MonthNavigator from "../components/MonthNavigator/MonthNavigator";
 
@@ -34,15 +34,11 @@ const getMonthlyData = (pivotDate, data) => {
 
 const List = () => {
   const data = useContext(DiaryStateContext);
-  const [pivotDate, setPivoDate] = useState(new Date());
+  const { currentDate, changeDate } = useContext(DateContext);
   const [sortType, setSortType] = useState("latest");
   const nav = useNavigate();
 
-  const changeDate = (newDate) => {
-    setPivoDate(newDate);
-  };
-
-  const monthlyData = getMonthlyData(pivotDate, data);
+  const monthlyData = getMonthlyData(currentDate, data);
 
   const sortOptions = [
     { value: "latest", label: "최신 순" },
@@ -64,7 +60,7 @@ const List = () => {
   return (
     <section className="home">
       <Header
-        title={<MonthNavigator date={pivotDate} onChangeDate={changeDate} />}
+        title={<MonthNavigator date={currentDate} onChangeDate={changeDate} />}
         leftChild={
           <Dropdown
             options={sortOptions}

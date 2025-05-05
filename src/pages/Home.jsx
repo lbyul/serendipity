@@ -3,17 +3,14 @@ import Header from "../components/Header/Header";
 import ListIcon from "../assets/list_icon.svg";
 import { useNavigate } from "react-router-dom";
 import MonthNavigator from "../components/MonthNavigator/MonthNavigator";
-import { useState } from "react";
+import { useContext } from "react";
 import Calendar from "../components/Calendar/Calendar";
 import Clover from "../assets/clover.png";
+import { DateContext } from "../App";
 
 const Home = () => {
   const nav = useNavigate();
-  const [currentDate, setCurrentDate] = useState(new Date());
-
-  const changeDate = (newDate) => {
-    setCurrentDate(newDate);
-  };
+  const { currentDate, changeDate } = useContext(DateContext);
 
   return (
     <div>
