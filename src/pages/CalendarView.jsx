@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import MonthNavigator from "../components/MonthNavigator/MonthNavigator";
 import { useState } from "react";
 import Calendar from "../components/Calendar/Calendar";
+import Clover from "../assets/clover.png";
 
 const CalendarView = () => {
   const nav = useNavigate();
@@ -20,7 +21,10 @@ const CalendarView = () => {
         rightChild={<Button imageUrl={ListIcon} onClick={() => nav("/")} />}
       />
       <MonthNavigator date={currentDate} onChangeDate={changeDate} />
-      <Calendar />
+      <Calendar date={currentDate} />
+      <div className="diarylist-button">
+        <Button type={"circle"} imageUrl={Clover} onClick={() => nav(`/new`)} />
+      </div>
     </div>
   );
 };

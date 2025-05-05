@@ -1,34 +1,80 @@
 .calendar {
   width: 100%;
+  height: 100%;
   padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .calendar-container {
   width: 100%;
 }
 
-.calendar-weeks {
+.calendar-header {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   text-align: center;
+  color: var(--gray-light);
+  opacity: 0.6;
 }
 
-.calendar-day-sun {
+.calendar-week.sun,
+.calendar-day.sun {
   color: var(--red);
 }
 
-.calendar-day-sat {
+.calendar-week.sat,
+.calendar-day.sat {
   color: var(--blue);
 }
 
-.calender-body {
+.calendar-body {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(6, 1fr);
   text-align: center;
   margin-top: 40px;
+  justify-content: center;
+  align-items: center;
 }
 
-.calender-date {
+.calendar-day {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.current-day {
+  background-color: var(--secondary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+.calendar-date {
   margin: 15px 0;
+}
+
+.other-month {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.calendar-entry {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.emotion-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }

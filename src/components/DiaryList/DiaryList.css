@@ -23,6 +23,6 @@
   display: none;
 }
 
-.diarylist .diarylist-button {
-  margin: 20px 0 40px 0;
+.diarylist-button {
+  justify-self: center;
 }
