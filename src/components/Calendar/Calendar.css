@@ -1,10 +1,11 @@
 .calendar {
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: -20px;
 }
 
 .calendar-container {
@@ -16,7 +17,7 @@
   grid-template-columns: repeat(7, 1fr);
   text-align: center;
   color: var(--gray-light);
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .calendar-week.sun,
@@ -44,12 +45,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4px 0;
   cursor: pointer;
 }
 
 .current-day {
-  background-color: var(--secondary);
+  background-color: var(--primary);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -57,12 +57,11 @@
 }
 
 .calendar-date {
-  margin: 15px 0;
+  margin: 20px 0;
 }
 
 .other-month {
-  opacity: 0;
-  pointer-events: none;
+  visibility: hidden;
 }
 
 .calendar-entry {
@@ -77,4 +76,9 @@
   width: 48px;
   height: 48px;
   object-fit: contain;
+}
+
+.future-date {
+  opacity: 0.2;
+  cursor: default;
 }

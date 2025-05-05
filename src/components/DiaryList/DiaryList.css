@@ -9,7 +9,7 @@
 .diarylist .diarylist-wrapper {
   width: 100%;
   flex: 1;
-  max-height: calc(100vh - 180px);
+  max-height: calc(100vh - 200px);
 
   overflow-y: auto;
   scrollbar-width: none;
