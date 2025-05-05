@@ -15,7 +15,7 @@ const DiaryList = ({ data }) => {
         ))}
       </div>
 
-      <div className="diarylist-button">
+      <div className="create-button">
         <Button type={"circle"} imageUrl={Clover} onClick={() => nav(`/new`)} />
       </div>
     </div>
