@@ -20,6 +20,11 @@ const DiaryEntry = ({
 
   useEffect(() => {
     if (initData) {
+      const createdDate =
+        initData.createdDate instanceof Date
+          ? initData.createdDate
+          : new Date(Number(initData.createdDate));
+
       setInput({
         ...initData,
         createdDate: new Date(Number(initData.createdDate)),
