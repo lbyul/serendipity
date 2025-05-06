@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { getToday, isFutureDate } from "../utils/date-utils";
+import { getToday, isFutureDate } from "@/utils/date-utils";
 
 const useCalendar = (date, getDiaryEntry) => {
   const [calendar, setCalendar] = useState([]);

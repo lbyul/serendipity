@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getToday, isFutureDate, isSameDay } from "../utils/date-utils";
+import { getToday, isFutureDate, isSameDay } from "@/utils/date-utils";
 
 const useDatePicker = (selectedDate, hasEntryForDate) => {
   const [currentView, setCurrentView] = useState(new Date(selectedDate));

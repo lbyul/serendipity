@@ -1,12 +1,12 @@
-import Button from "../components/Button/Button";
-import Header from "../components/Header/Header";
-import ListIcon from "../assets/list_icon.svg";
-import { useNavigate } from "react-router-dom";
-import MonthNavigator from "../components/MonthNavigator/MonthNavigator";
 import { useContext } from "react";
-import Calendar from "../components/Calendar/Calendar";
-import Clover from "../assets/clover.png";
-import { DateContext } from "../App";
+import { useNavigate } from "react-router-dom";
+import { DateContext } from "@/App";
+import Header from "@/components/Header/Header";
+import Button from "@/components/Button/Button";
+import MonthNavigator from "@/components/MonthNavigator/MonthNavigator";
+import Calendar from "@/components/Calendar/Calendar";
+import Clover from "@/assets/clover.png";
+import ListIcon from "@/assets/list_icon.svg";
 
 const Home = () => {
   const nav = useNavigate();

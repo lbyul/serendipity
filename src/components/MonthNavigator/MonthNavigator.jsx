@@ -1,4 +1,4 @@
-import Button from "../Button/Button";
+import Button from "@/components/Button/Button";
 import "./MonthNavigator.css";
 
 const MonthNavigator = ({ date, onChangeDate }) => {

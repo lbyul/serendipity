@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { DiaryDispatchContext } from "../App";
 import { useLocation, useNavigate } from "react-router-dom";
-import Header from "../components/Header/Header";
-import Button from "../components/Button/Button";
-import DiaryEntry from "../components/DiaryEntry/DiaryEntry";
+import { DiaryDispatchContext } from "@/App";
+import Header from "@/components/Header/Header";
+import Button from "@/components/Button/Button";
+import DiaryEntry from "@/components/DiaryEntry/DiaryEntry";
 
 const New = () => {
   const { onCreate } = useContext(DiaryDispatchContext);

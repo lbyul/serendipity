@@ -1,12 +1,12 @@
-import Header from "../components/Header/Header";
-import Button from "../components/Button/Button";
-import CalendarIcon from "./../assets/calendar_icon.svg";
-import DiaryList from "../components/DiaryList/DiaryList";
-import Dropdown from "../components/Dropdown/Dropdown";
 import { useState, useContext } from "react";
-import { DiaryStateContext, DateContext } from "../App";
 import { useNavigate } from "react-router-dom";
-import MonthNavigator from "../components/MonthNavigator/MonthNavigator";
+import { DiaryStateContext, DateContext } from "@/App";
+import Header from "@/components/Header/Header";
+import MonthNavigator from "@/components/MonthNavigator/MonthNavigator";
+import Dropdown from "@/components/Dropdown/Dropdown";
+import Button from "@/components/Button/Button";
+import DiaryList from "@/components/DiaryList/DiaryList";
+import CalendarIcon from "@/assets/calendar_icon.svg";
 
 const getMonthlyData = (pivotDate, data) => {
   const beginTime = new Date(

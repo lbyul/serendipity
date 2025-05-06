@@ -1,6 +1,6 @@
-import "./Modal.css";
 import { useRef } from "react";
-import useEscapeKey from "../../hooks/useEscapeKey";
+import useEscapeKey from "@/hooks/useEscapeKey";
+import "./Modal.css";
 
 const Modal = ({
   isOpen,

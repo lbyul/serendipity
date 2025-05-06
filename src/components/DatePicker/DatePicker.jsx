@@ -1,9 +1,9 @@
-import "./DatePicker.css";
 import { useRef } from "react";
-import useEscapeKey from "../../hooks/useEscapeKey";
-import useOutsideClick from "../../hooks/useOutsideClick";
-import useDiaryEntries from "../../hooks/useDiaryEntries";
-import useDatePicker from "../../hooks/useDatePicker";
+import useDatePicker from "@/hooks/useDatePicker";
+import useDiaryEntries from "@/hooks/useDiaryEntries";
+import useEscapeKey from "@/hooks/useEscapeKey";
+import useOutsideClick from "@/hooks/useOutsideClick";
+import "./DatePicker.css";
 
 const DatePicker = ({ selectedDate, onSelectDate, isOpen, onClose }) => {
   const datePickerRef = useRef(null);
@@ -64,8 +64,8 @@ const DatePicker = ({ selectedDate, onSelectDate, isOpen, onClose }) => {
                     dateInfo.isSelected ? "selected" : ""
                   } 
                 ${dateInfo.isFuture ? "future" : ""} ${
-                    dateInfo.hasEntry ? "has-entry" : ""
-                  }`}
+                  dateInfo.hasEntry ? "has-entry" : ""
+                }`}
                 >
                   <div className="date-number">{dayOfMonth}</div>
                   <div className="day-name">{weekDays[dayOfWeek]}</div>

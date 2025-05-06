@@ -1,10 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { DiaryDispatchContext } from "../App";
-import Button from "../components/Button/Button";
-import Header from "../components/Header/Header";
-import DiaryEntry from "../components/DiaryEntry/DiaryEntry";
-import useDiary from "../hooks/useDiary";
+import { DiaryDispatchContext } from "@/App";
+import useDiary from "@/hooks/useDiary";
+import Button from "@/components/Button/Button";
+import Header from "@/components/Header/Header";
+import DiaryEntry from "@/components/DiaryEntry/DiaryEntry";
 
 const Edit = () => {
   const params = useParams();

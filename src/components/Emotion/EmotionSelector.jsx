@@ -1,9 +1,9 @@
-import "./EmotionSelector.css";
 import { useState } from "react";
-import EmotionItem from "./EmotionItem";
-import Button from "../Button/Button";
-import Clover from "../../assets/clover.png";
-import EmotionModal from "./EmotionModal";
+import Button from "@/components/Button/Button";
+import EmotionItem from "@/components/Emotion/EmotionItem";
+import EmotionModal from "@/components/Emotion/EmotionModal";
+import Clover from "@/assets/clover.png";
+import "./EmotionSelector.css";
 
 const EmotionSelector = ({
   selectedEmotion,

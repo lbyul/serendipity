@@ -1,14 +1,12 @@
-import "./App.css";
-import { useReducer, useRef, createContext } from "react";
+import { useReducer, useState, useRef, createContext } from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import List from "./pages/List";
-import CalendarView from "./pages/Home";
-import New from "./pages/New";
-import Diary from "./pages/Diary";
-import Edit from "./pages/Edit";
-import Notfound from "./pages/Notfound";
-import { useState } from "react";
+import Home from "@/pages/Home";
+import List from "@/pages/List";
+import New from "@/pages/New";
+import Diary from "@/pages/Diary";
+import Edit from "@/pages/Edit";
+import Notfound from "@/pages/Notfound";
+import "./App.css";
 
 const mockData = [
   {
@@ -87,7 +85,6 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/list" element={<List />} />
-              <Route path="/calendar" element={<CalendarView />} />
               <Route path="/new" element={<New />} />
               <Route path="/diary/:id" element={<Diary />} />
               <Route path="/edit/:id" element={<Edit />} />

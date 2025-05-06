@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import Button from "../Button/Button";
+import Button from "@/components/Button/Button";
+import DatePicker from "@/components/DatePicker/DatePicker";
+import EmotionSelector from "@/components/Emotion/EmotionSelector";
+import { getStringedDate } from "@/utils/get-stringed-date";
 import "./DiaryEntry.css";
-import { getStringedDate } from "../../utils/get-stringed-date";
-import EmotionSelector from "../Emotion/EmotionSelector";
-import DatePicker from "../DatePicker/DatePicker";
 
 const DiaryEntry = ({
   initData,
@@ -22,11 +22,6 @@ const DiaryEntry = ({
 
   useEffect(() => {
     if (initData) {
-      const createdDate =
-        initData.createdDate instanceof Date
-          ? initData.createdDate
-          : new Date(Number(initData.createdDate));
-
       setInput({
         ...initData,
         createdDate: new Date(Number(initData.createdDate)),

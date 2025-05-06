@@ -1,8 +1,8 @@
-import "./Calendar.css";
 import { useNavigate } from "react-router-dom";
-import { getEmotionImage } from "../../utils/get-emotion-image";
-import useDiaryEntries from "../../hooks/useDiaryEntries";
-import useCalendar from "../../hooks/useCalendar";
+import useCalendar from "@/hooks/useCalendar";
+import useDiaryEntries from "@/hooks/useDiaryEntries";
+import { getEmotionImage } from "@/utils/get-emotion-image";
+import "./Calendar.css";
 
 const Calendar = ({ date = new Date() }) => {
   const nav = useNavigate();

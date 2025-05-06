@@ -1,8 +1,8 @@
-import "./DiaryItem.css";
-import { getEmotionImage } from "../../utils/get-emotion-image";
-import Button from "../Button/Button";
-import Clover from "../../assets/clover.png";
 import { useNavigate } from "react-router-dom";
+import Button from "@/components/Button/Button";
+import { getEmotionImage } from "@/utils/get-emotion-image";
+import Clover from "@/assets/clover.png";
+import "./DiaryItem.css";
 
 const DiaryItem = ({ id, emotionId, createdDate, content }) => {
   const nav = useNavigate();

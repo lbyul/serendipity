@@ -1,5 +1,5 @@
 import { useContext, useCallback } from "react";
-import { DiaryStateContext } from "../App";
+import { DiaryStateContext } from "@/App";
 
 const useDiaryEntries = () => {
   const diaryData = useContext(DiaryStateContext);
