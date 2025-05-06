@@ -6,9 +6,13 @@
   height: calc(100vh - 120px);
 }
 
-.diary-date input {
+.diary-date .date-button {
   background-color: transparent;
   font-size: 1.6rem;
+}
+.date-button span {
+  margin-left: 6px;
+  color: var(--gray-light);
 }
 
 .diary-content {

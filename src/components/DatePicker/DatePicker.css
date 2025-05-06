@@ -1,0 +1,83 @@
+.date-picker-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-picker {
+  text-align: center;
+  background-color: var(--primary);
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 420px;
+  overflow: hidden;
+  padding: 26px 16px;
+}
+
+.date-picker-header {
+  text-align: center;
+  font-size: 2rem;
+  padding-bottom: 20px;
+}
+
+.date-picker-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.date-picker-days {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.date-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.date-option:hover:not(.has-entry) {
+  background-color: var(--beige-light);
+}
+
+.day-name {
+  color: var(--gray-light);
+}
+
+.date-option.selected {
+  background-color: var(--secondary);
+}
+
+.date-option.future {
+  visibility: hidden;
+}
+
+.date-option.has-entry {
+  opacity: 0.3;
+  cursor: default;
+  position: relative;
+  color: var(--gray-light);
+}
+
+.arrow-button {
+  color: var(--beige);
+  font-size: 2rem;
+  width: 36px;
+  height: 36px;
+}

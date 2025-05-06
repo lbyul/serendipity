@@ -1,5 +1,5 @@
 import "./Modal.css";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import useEscapeKey from "../../hooks/useEscapeKey";
 
 const Modal = ({

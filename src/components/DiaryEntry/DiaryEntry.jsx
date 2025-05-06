@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import Button from "../Button/Button";
 import "./DiaryEntry.css";
-import { getStringedDate } from "../../util/get-stringed-date";
+import { getStringedDate } from "../../utils/get-stringed-date";
 import EmotionSelector from "../Emotion/EmotionSelector";
+import DatePicker from "../DatePicker/DatePicker";
 
 const DiaryEntry = ({
   initData,
@@ -17,6 +18,7 @@ const DiaryEntry = ({
     emotionId: 1,
     content: "",
   });
+  const [datePickerOpen, setDatePickerOpen] = useState(false);
 
   useEffect(() => {
     if (initData) {
@@ -33,16 +35,9 @@ const DiaryEntry = ({
   }, [initData]);
 
   const onChangeInput = (e) => {
-    let name = e.target.name;
-    let value = e.target.value;
-
-    if (name === "createdDate") {
-      value = new Date(value);
-    }
-
     setInput({
       ...input,
-      [name]: value,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -53,8 +48,19 @@ const DiaryEntry = ({
     });
   };
 
+  const onSelectDate = (date) => {
+    setInput({
+      ...input,
+      createdDate: date,
+    });
+  };
+
   const onClickSubmitButton = () => {
     onSubmit(input);
+  };
+
+  const toggleDatePicker = () => {
+    setDatePickerOpen(!datePickerOpen);
   };
 
   return (
@@ -77,12 +83,17 @@ const DiaryEntry = ({
 
       <section className="diary-date">
         {isEditing ? (
-          <input
-            name="createdDate"
-            value={getStringedDate(input.createdDate)}
-            onChange={onChangeInput}
-            type="date"
-          />
+          <>
+            <button className="date-button" onClick={toggleDatePicker}>
+              {getStringedDate(input.createdDate)} <span>&gt;</span>
+            </button>
+            <DatePicker
+              selectedDate={input.createdDate}
+              onSelectDate={onSelectDate}
+              isOpen={datePickerOpen}
+              onClose={() => setDatePickerOpen(false)}
+            />
+          </>
         ) : (
           <span>{getStringedDate(new Date(createdDate))}</span>
         )}

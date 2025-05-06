@@ -1,8 +1,9 @@
 import "./EmotionModal.css";
 import EmotionItem from "./EmotionItem";
+import { useRef } from "react";
+import { emotionList } from "../../utils/constants";
 import useEscapeKey from "../../hooks/useEscapeKey";
-import { useRef, useEffect } from "react";
-import { emotionList } from "../../util/constants";
+import useOutsideClick from "../../hooks/useOutsideClick";
 
 const EmotionModal = ({
   isOpen,
@@ -12,21 +13,7 @@ const EmotionModal = ({
 }) => {
   const modalRef = useRef(null);
   useEscapeKey(isOpen, onClose);
-
-  useEffect(() => {
-    const onClickOutside = (e) => {
-      if (modalRef.current && !modalRef.current.contains(e.target)) {
-        onClose();
-      }
-    };
-    if (isOpen) {
-      document.addEventListener("mousedown", onClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", onClickOutside);
-    };
-  }, [isOpen, onClose]);
+  useOutsideClick(modalRef, isOpen, onClose);
 
   if (!isOpen) return null;
 

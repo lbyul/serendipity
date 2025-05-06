@@ -1,5 +1,5 @@
 import "./DiaryItem.css";
-import { getEmotionImage } from "../../util/get-emotion-image";
+import { getEmotionImage } from "../../utils/get-emotion-image";
 import Button from "../Button/Button";
 import Clover from "../../assets/clover.png";
 import { useNavigate } from "react-router-dom";

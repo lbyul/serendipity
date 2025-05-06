@@ -1,13 +1,15 @@
 import "./Dropdown.css";
 import Button from "../Button/Button";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import useEscapeKey from "../../hooks/useEscapeKey";
+import useOutsideClick from "../../hooks/useOutsideClick";
 
 const Dropdown = ({ options, onChange, buttonType, icon, align }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(options[0] || "");
   const dropdownRef = useRef(null);
   useEscapeKey(isOpen, () => setIsOpen(false));
+  useOutsideClick(dropdownRef, isOpen, () => setIsOpen(false));
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -25,20 +27,6 @@ const Dropdown = ({ options, onChange, buttonType, icon, align }) => {
 
     return setIsOpen(false);
   };
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen]);
 
   return (
     <div
