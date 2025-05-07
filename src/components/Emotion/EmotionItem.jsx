@@ -1,6 +1,6 @@
+import "./EmotionItem.css";
 import { useState } from "react";
 import { getEmotionImage } from "@/utils/get-emotion-image";
-import "./EmotionItem.css";
 
 const EmotionItem = ({
   emotionId,

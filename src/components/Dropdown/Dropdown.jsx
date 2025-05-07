@@ -1,8 +1,8 @@
-import { useState, useRef } from "react";
+import "./Dropdown.css";
+import { useRef, useState } from "react";
+import Button from "@/components/Button/Button";
 import useEscapeKey from "@/hooks/useEscapeKey";
 import useOutsideClick from "@/hooks/useOutsideClick";
-import Button from "@/components/Button/Button";
-import "./Dropdown.css";
 
 const Dropdown = ({ options, onChange, buttonType, icon, align }) => {
   const [isOpen, setIsOpen] = useState(false);

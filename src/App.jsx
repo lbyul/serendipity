@@ -1,12 +1,12 @@
-import { useReducer, useState, useRef, createContext } from "react";
-import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import { createContext, useReducer, useRef, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import Diary from "@/pages/Diary";
+import Edit from "@/pages/Edit";
 import Home from "@/pages/Home";
 import List from "@/pages/List";
 import New from "@/pages/New";
-import Diary from "@/pages/Diary";
-import Edit from "@/pages/Edit";
 import Notfound from "@/pages/Notfound";
-import "./App.css";
 
 const mockData = [
   {

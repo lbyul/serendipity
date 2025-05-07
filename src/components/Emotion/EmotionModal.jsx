@@ -1,9 +1,9 @@
+import "./EmotionModal.css";
 import { useRef } from "react";
+import EmotionItem from "@/components/Emotion/EmotionItem";
 import useEscapeKey from "@/hooks/useEscapeKey";
 import useOutsideClick from "@/hooks/useOutsideClick";
-import EmotionItem from "@/components/Emotion/EmotionItem";
 import { emotionList } from "@/utils/constants";
-import "./EmotionModal.css";
 
 const EmotionModal = ({
   isOpen,
