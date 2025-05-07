@@ -1,5 +1,5 @@
-import Button from "@/components/Button/Button";
 import "./MonthNavigator.css";
+import Button from "@/components/Button/Button";
 
 const MonthNavigator = ({ date, onChangeDate }) => {
   const onIncreaseMonth = () => {

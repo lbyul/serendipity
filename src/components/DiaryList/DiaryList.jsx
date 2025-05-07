@@ -1,8 +1,8 @@
+import "./DiaryList.css";
 import { useNavigate } from "react-router-dom";
 import Button from "@/components/Button/Button";
 import DiaryItem from "@/components/DiaryItem/DiaryItem";
 import Clover from "@/assets/clover.png";
-import "./DiaryList.css";
 
 const DiaryList = ({ data }) => {
   const nav = useNavigate();
