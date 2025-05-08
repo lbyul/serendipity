@@ -1,12 +1,8 @@
 import "./DiaryList.css";
-import { useNavigate } from "react-router-dom";
-import Button from "@/components/Button/Button";
+import CreateButton from "@/components/Button/CreateButton";
 import DiaryItem from "@/components/DiaryItem/DiaryItem";
-import Clover from "@/assets/clover.png";
 
 const DiaryList = ({ data }) => {
-  const nav = useNavigate();
-
   return (
     <div className="diarylist">
       <div className="diarylist-wrapper">
@@ -14,10 +10,7 @@ const DiaryList = ({ data }) => {
           <DiaryItem key={item.id} {...item} />
         ))}
       </div>
-
-      <div className="create-button">
-        <Button type={"circle"} imageUrl={Clover} onClick={() => nav(`/new`)} />
-      </div>
+      <CreateButton />
     </div>
   );
 };
