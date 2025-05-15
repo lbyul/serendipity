@@ -7,6 +7,7 @@ import Home from "@/pages/Home";
 import List from "@/pages/List";
 import New from "@/pages/New";
 import Notfound from "@/pages/Notfound";
+import Movie from "./pages/Movie";
 
 const mockData = [
   {
@@ -88,6 +89,7 @@ function App() {
               <Route path="/new" element={<New />} />
               <Route path="/diary/:id" element={<Diary />} />
               <Route path="/edit/:id" element={<Edit />} />
+              <Route path="/movie" element={<Movie />} />
               <Route path="*" element={<Notfound />} />
             </Routes>
           </DateContext.Provider>

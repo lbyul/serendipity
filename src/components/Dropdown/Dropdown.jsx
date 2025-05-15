@@ -4,9 +4,18 @@ import Button from "@/components/Button/Button";
 import useEscapeKey from "@/hooks/useEscapeKey";
 import useOutsideClick from "@/hooks/useOutsideClick";
 
-const Dropdown = ({ options, onChange, buttonType, icon, align }) => {
+const Dropdown = ({
+  options,
+  onChange,
+  buttonType,
+  icon,
+  align,
+  selectedOption,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(options[0] || "");
+  const [currentOption, setCurrentOption] = useState(
+    selectedOption || options[0]
+  );
   const dropdownRef = useRef(null);
   useEscapeKey(isOpen, () => setIsOpen(false));
   useOutsideClick(dropdownRef, isOpen, () => setIsOpen(false));
@@ -17,7 +26,7 @@ const Dropdown = ({ options, onChange, buttonType, icon, align }) => {
 
   const handleOptionClick = (option) => {
     if (onChange) {
-      setSelectedOption(option);
+      setCurrentOption(option);
       onChange(option);
     }
 
@@ -36,7 +45,7 @@ const Dropdown = ({ options, onChange, buttonType, icon, align }) => {
       {buttonType === "select" ? (
         <Button
           type="select"
-          text={selectedOption?.label}
+          text={currentOption?.label}
           arrow={true}
           arrowDirection={isOpen ? "top" : "down"}
           onClick={toggleDropdown}
