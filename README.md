@@ -1,7 +1,7 @@
 # 🍀 Serendipity
 > 하루의 감정을 기록하고 추억을 남기는 개인 일기 웹앱
 
-![serendipity](https://github.com/user-attachments/assets/50720a00-a1dc-47ff-94c9-ec45935356d2)
+![serendipity](https://github.com/user-attachments/assets/e93430f7-abe6-4d74-aafe-b0b383e7240f)
 
 ## 📋 프로젝트 개요
 - 개인 프로젝트
